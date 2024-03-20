@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.link::after {
+		content: '';
+		transform: scaleX(0);
+		transform-origin: right;
+		transition: transform 0.3s;
+
+		@apply absolute bg-DarkCyan left-0 bottom-0 h-[2px] w-full;
+	}
+
+	.link:hover::after {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+
+	.active::after {
+		transform: scaleX(1);
+	}
+
+	.active {
+		@apply text-DarkGreyBlue;
+	}
+}
+
 @layer base {
 	h1,
 	h2,
@@ -11,7 +35,8 @@
 	h6 {
 		@apply font-fraunces;
 	}
-}
 
-@layer utilities {
+	body {
+		@apply bg-LightCream;
+	}
 }

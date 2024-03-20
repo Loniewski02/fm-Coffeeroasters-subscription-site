@@ -19,6 +19,9 @@ const config: Config = {
 				LightCream: '#FEFCF7',
 				Grey: '#83888F',
 			},
+			spacing: {
+				13: '54px',
+			},
 		},
 	},
 	plugins: [],
