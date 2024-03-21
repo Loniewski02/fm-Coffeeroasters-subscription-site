@@ -21,7 +21,7 @@ const Footer = () => {
 	const pathname = usePathname();
 
 	return (
-		<footer className='sectionX py-18'>
+		<footer className='sectionX pt-15 pb-18'>
 			<Wrapper className='bg-DarkGreyBlue lg:relative py-13 flex flex-col items-center justify-center gap-12 section-inner-x lg:py-11 lg:gap-25 md:gap-8 lg:flex-row lg:justify-start'>
 				<Link
 					href='/'

@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={`${fontBarlow.variable} ${fontFraunces.variable} font-sans min-h-[100dvh]`}>
+			<body className={`${fontBarlow.variable} ${fontFraunces.variable} font-barlow min-h-[100dvh]`}>
 				<MainNav />
 				{children}
 				<Footer />

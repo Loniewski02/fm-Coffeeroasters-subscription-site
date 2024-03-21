@@ -10,7 +10,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className='sectionX py-4'>
+		<header className='sectionX pt-4 pb-15'>
 			<Wrapper
 				className={`bg-[url('../public/assets/home/mobile/image-hero-coffeepress.jpg')] lg:bg-[url('../public/assets/home/desktop/image-hero-coffeepress.jpg')] md:bg-[url('../public/assets/home/tablet/image-hero-coffeepress.jpg')]  bg-center rounded-[10px] flex flex-col items-center md:items-start justify-center bg-cover bg-no-repeat section-inner-x  py-25 lg:py-20`}>
 				<h1 className='text-[40px] lg:text-7xl lg:max-w-lg md:text-5xl text-center md:text-left text-LightCream mb-6 lg:mb-8'>

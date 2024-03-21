@@ -7,6 +7,16 @@
 		@apply px-6 md:px-10;
 	}
 
+	.text-gradient {
+		background: -webkit-linear-gradient(#979797, transparent 80%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.sectionY {
+		@apply py-15;
+	}
+
 	.section-inner-x {
 		@apply px-6 md:px-14 lg:px-21;
 	}

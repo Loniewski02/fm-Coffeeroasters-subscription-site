@@ -14,6 +14,7 @@ const config: Config = {
 			},
 			colors: {
 				DarkCyan: '#0E8784',
+				CyanHover: '#66D2CF',
 				DarkGreyBlue: '#333D4B',
 				PaleOrange: '#FDD6BA',
 				LightCream: '#FEFCF7',
@@ -21,6 +22,7 @@ const config: Config = {
 			},
 			spacing: {
 				13: '54px',
+				15: '60px',
 				18: '72px',
 				21: '86px',
 				25: '100px',
