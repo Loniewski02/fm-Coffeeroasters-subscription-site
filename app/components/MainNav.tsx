@@ -6,11 +6,7 @@ import Link from 'next/link';
 import Wrapper from './layout/Wrapper';
 import Logo from '../../public/assets/shared/logo.svg';
 
-const ROUTES = [
-	{ name: 'Home', url: '/' },
-	{ name: 'About Us', url: '/about' },
-	{ name: 'Create Your Plan', url: '/subscribe' },
-];
+import { ROUTES } from '../routes';
 
 const MainNav = () => {
 	const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
@@ -23,7 +19,7 @@ const MainNav = () => {
 	const barClasses = 'block w-full h-[3px] bg-DarkGreyBlue rounded-sm absolute left-0';
 
 	return (
-		<nav className='sticky bg-LightCream top-0 left-0 right-0 px-6 py-8 md:p-10'>
+		<nav className='sticky bg-LightCream top-0 left-0 right-0 sectionX py-8 md:py-10'>
 			<Wrapper className='flex flex-row justify-between items-center '>
 				<Link
 					href='/'
@@ -47,12 +43,12 @@ const MainNav = () => {
 					<div className='flex flex-col gap-8 items-center md:flex-row '>
 						{ROUTES.map((route) => (
 							<Link
-								key={route.url}
+								key={route.id}
 								href={route.url}
 								aria-label={`${route.name} Page`}
 								className={`${
 									pathname === route.url ? 'active' : 'md:text-Grey'
-								} relative  md:px-[1px] py-1 link md:uppercase tracking-wider font-fraunces md:font-barlow md:font-bold text-2xl md:text-xs`}>
+								} link md:uppercase tracking-wider font-fraunces md:font-barlow md:font-bold text-2xl md:text-xs`}>
 								{route.name}
 							</Link>
 						))}

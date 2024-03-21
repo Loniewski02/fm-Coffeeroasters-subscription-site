@@ -21,6 +21,13 @@ const config: Config = {
 			},
 			spacing: {
 				13: '54px',
+				18: '72px',
+				21: '86px',
+				25: '100px',
+				70: '280px',
+			},
+			fontSize: {
+				lm: ['15px', '25px'],
 			},
 		},
 	},

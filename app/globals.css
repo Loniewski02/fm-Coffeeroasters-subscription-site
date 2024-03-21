@@ -3,13 +3,25 @@
 @tailwind utilities;
 
 @layer components {
+	.sectionX {
+		@apply px-6 md:px-10;
+	}
+
+	.section-inner-x {
+		@apply px-6 md:px-14 lg:px-21;
+	}
+
+	.link {
+		@apply relative md:px-[1px] py-1;
+	}
+
 	.link::after {
 		content: '';
 		transform: scaleX(0);
 		transform-origin: right;
 		transition: transform 0.3s;
 
-		@apply absolute bg-DarkCyan left-0 bottom-0 h-[2px] w-full;
+		@apply absolute bg-DarkCyan left-0 bottom-0  h-[2px] w-full;
 	}
 
 	.link:hover::after {
@@ -23,6 +35,10 @@
 
 	.active {
 		@apply text-DarkGreyBlue;
+	}
+
+	.wrapper {
+		@apply my-0 mx-auto max-w-7xl w-full;
 	}
 }
 
