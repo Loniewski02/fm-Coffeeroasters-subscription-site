@@ -43,13 +43,13 @@ const Footer = () => {
 				</div>
 				<div className='lg:absolute right-21 flex gap-6 items-center'>
 					{SOCIALS.map((social) => (
-						<Link
+						<a
 							key={social.id}
 							href={social.url}
 							aria-label={social.name}
 							className='text-LightCream hover:text-PaleOrange'>
 							{social.element}
-						</Link>
+						</a>
 					))}
 				</div>
 			</Wrapper>
