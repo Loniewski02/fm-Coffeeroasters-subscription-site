@@ -19,7 +19,7 @@ const MainNav = () => {
 	const barClasses = 'block w-full h-[3px] bg-DarkGreyBlue rounded-sm absolute left-0';
 
 	return (
-		<nav className='sticky bg-LightCream top-0 left-0 right-0 sectionX py-8 md:py-10'>
+		<nav className='sticky bg-LightCream top-0 left-0 right-0 sectionX py-8 md:py-10 z-20'>
 			<Wrapper className='flex flex-row justify-between items-center '>
 				<Link
 					href='/'
