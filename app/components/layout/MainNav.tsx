@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import Link from 'next/link';
-import Wrapper from './layout/Wrapper';
-import Logo from '../../public/assets/shared/logo.svg';
+import Wrapper from './Wrapper';
+import Logo from '../../../public/assets/shared/logo.svg';
 
-import { ROUTES } from '../routes';
+import { ROUTES } from '../../routes';
 
 const MainNav = () => {
 	const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
@@ -14,6 +14,10 @@ const MainNav = () => {
 
 	const showMobileMenuHandler = () => {
 		setIsMobileMenuShown((prevState) => !prevState);
+	};
+
+	const hideMobileMenuHandler = () => {
+		setIsMobileMenuShown(false);
 	};
 
 	const barClasses = 'block w-full h-[3px] bg-DarkGreyBlue rounded-sm absolute left-0';
@@ -46,6 +50,7 @@ const MainNav = () => {
 								key={route.id}
 								href={route.url}
 								aria-label={`${route.name} Page`}
+								onClick={hideMobileMenuHandler}
 								className={`${
 									pathname === route.url ? 'active' : 'md:text-Grey'
 								} link md:uppercase tracking-wider font-fraunces md:font-barlow md:font-bold text-2xl md:text-xs`}>

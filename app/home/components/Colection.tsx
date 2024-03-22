@@ -1,4 +1,4 @@
-import Wrapper from '../layout/Wrapper';
+import Wrapper from '../../components/layout/Wrapper';
 import espressoPng from '../../../public/assets/home/general/image-gran-espresso.png';
 import planaltoPng from '../../../public/assets/home/general/image-planalto.png';
 import piccolloPng from '../../../public/assets/home/general/image-piccollo.png';

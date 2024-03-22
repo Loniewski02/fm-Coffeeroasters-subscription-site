@@ -1,4 +1,4 @@
-import Wrapper from '../layout/Wrapper';
+import Wrapper from '../../components/layout/Wrapper';
 import Benefit from './Benefit';
 
 import CoffeBean from '../../../public/assets/home/general/icon-coffee-bean.svg';
@@ -7,8 +7,8 @@ import Truck from '../../../public/assets/home/general/icon-truck.svg';
 
 const Benefits = () => {
 	return (
-		<section className='sectionX sectionY '>
-			<Wrapper className='relative flex flex-col items-center text-center py-16 md:py-14 lg:py-25 section-inner-x'>
+		<section className='sectionX sectionY'>
+			<Wrapper className='relative flex  flex-col items-center text-center pt-16 md:pt-14 lg:pt-25 section-inner-x '>
 				<div className='absolute left-0 top-0 w-full h-[902px] bg-DarkGreyBlue rounded-[10px] z-0 md:h-[523px]' />
 				<h2 className='text-center lg:text-[40px] md:text-[32px] text-xxl text-LightCream mb-6 lg:mb-8 relative z-10'>
 					Why choose us?

@@ -14,7 +14,11 @@
 	}
 
 	.sectionY {
-		@apply py-15;
+		@apply py-15 md:py-18 lg:py-25;
+	}
+
+	.headerY {
+		@apply pt-4 pb-15;
 	}
 
 	.section-inner-x {

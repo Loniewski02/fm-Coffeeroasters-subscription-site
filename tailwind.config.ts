@@ -32,6 +32,18 @@ const config: Config = {
 				lm: ['15px', '25px'],
 				xxl: ['28px', '28px'],
 			},
+			keyframes: {
+				loading: {
+					'0%': { left: '0' },
+					'30%': { width: '20%' },
+					'65%': { width: '25%' },
+					'90%': { width: '15%' },
+					'100%': { left: '100%' },
+				},
+			},
+			animation: {
+				loading: 'loading 1s ease-in-out infinite',
+			},
 		},
 	},
 	plugins: [],

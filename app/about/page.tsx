@@ -1,5 +1,11 @@
+import Header from './components/Header';
+
 const About = () => {
-	return <h1>About</h1>;
+	return (
+		<main className='h-[150vh]'>
+			<Header />
+		</main>
+	);
 };
 
 export default About;

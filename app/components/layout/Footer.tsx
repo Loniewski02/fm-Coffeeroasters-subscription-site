@@ -1,13 +1,13 @@
 'use client';
 import Link from 'next/link';
-import Wrapper from './layout/Wrapper';
-import Logo from '../../public/assets/shared/logo.svg';
+import Wrapper from './Wrapper';
+import Logo from '../../../public/assets/shared/logo.svg';
 
-import { ROUTES } from '../routes';
+import { ROUTES } from '../../routes';
 
-import FacebookIco from '../../public/assets/shared/icon-facebook.svg';
-import TwitterIco from '../../public/assets/shared/icon-twitter.svg';
-import InstagramIco from '../../public/assets/shared/icon-instagram.svg';
+import FacebookIco from '../../../public/assets/shared/icon-facebook.svg';
+import TwitterIco from '../../../public/assets/shared/icon-twitter.svg';
+import InstagramIco from '../../../public/assets/shared/icon-instagram.svg';
 import { usePathname } from 'next/navigation';
 
 const classes = 'transition-color duration-300';
@@ -21,7 +21,7 @@ const Footer = () => {
 	const pathname = usePathname();
 
 	return (
-		<footer className='sectionX pt-15 pb-18'>
+		<footer className='sectionX sectionY pb-18'>
 			<Wrapper className='bg-DarkGreyBlue lg:relative py-13 flex flex-col items-center justify-center gap-12 section-inner-x lg:py-11 lg:gap-25 md:gap-8 lg:flex-row lg:justify-start'>
 				<Link
 					href='/'

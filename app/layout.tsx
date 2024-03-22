@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Barlow, Fraunces } from 'next/font/google';
 import './globals.css';
 
-import MainNav from './components/MainNav';
-import Footer from './components/Footer';
+import MainNav from './components/layout/MainNav';
+import Footer from './components/layout/Footer';
 
 const fontFraunces = Fraunces({
 	subsets: ['latin'],
@@ -20,7 +20,7 @@ const fontBarlow = Barlow({
 });
 
 export const metadata: Metadata = {
-	title: 'My App',
+	title: 'Coffeeroasters',
 	description: 'My App',
 };
 

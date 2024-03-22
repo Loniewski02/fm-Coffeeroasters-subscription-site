@@ -1,7 +1,7 @@
-import Benefits from './components/home/Benefits';
-import Collection from './components/home/Colection';
-import Header from './components/home/Header';
-import SectionHow from './components/home/SectionHow';
+import Benefits from './home/components/Benefits';
+import Collection from './home/components/Colection';
+import Header from './home/components/Header';
+import SectionHow from './home/components/SectionHow';
 
 export default function Home() {
 	return (
