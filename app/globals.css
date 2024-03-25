@@ -7,6 +7,16 @@
 		@apply px-6 md:px-10;
 	}
 
+	.magic {
+		background-color: #fefcf7cd;
+		backdrop-filter: blur(12px);
+	}
+
+	.no-magic {
+		background-color: transparent;
+		backdrop-filter: none;
+	}
+
 	.text-gradient {
 		background: -webkit-linear-gradient(#979797, transparent 80%);
 		-webkit-background-clip: text;

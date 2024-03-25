@@ -40,9 +40,19 @@ const config: Config = {
 					'90%': { width: '15%' },
 					'100%': { left: '100%' },
 				},
+				hide:{
+					'0%':{transform: 'translateY(0)'},
+					'100%':{transform: 'translateY(-100%)'},
+				},
+				show:{
+					'0%':{transform: 'translateY(-100%)'},
+					'100%':{transform: 'translateY(0)'},
+				}
 			},
 			animation: {
 				loading: 'loading 1s ease-in-out infinite',
+				hide:'hide .3s ease-in-out forwards',
+				show:'show .3s ease-in-out forwards'
 			},
 		},
 	},

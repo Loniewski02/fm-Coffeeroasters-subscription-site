@@ -1,9 +1,15 @@
+import Commitment from './components/Commitment';
+import ContactInfo from './components/ContactInfo';
 import Header from './components/Header';
+import Quality from './components/Quality';
 
 const About = () => {
 	return (
-		<main className='h-[150vh]'>
+		<main>
 			<Header />
+			<Commitment />
+			<Quality />
+			<ContactInfo />
 		</main>
 	);
 };
