@@ -3,85 +3,85 @@
 @tailwind utilities;
 
 @layer components {
-	.sectionX {
-		@apply px-6 md:px-10;
-	}
+  .sectionX {
+    @apply px-6 md:px-10;
+  }
 
-	.magic {
-		background-color: #fefcf7cd;
-		backdrop-filter: blur(12px);
-	}
+  .magic {
+    background-color: #fefcf7cd;
+    backdrop-filter: blur(12px);
+  }
 
-	.no-magic {
-		background-color: transparent;
-		backdrop-filter: none;
-	}
+  .no-magic {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
 
-	.text-gradient {
-		background: -webkit-linear-gradient(#979797, transparent 80%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+  .text-gradient {
+    background: -webkit-linear-gradient(#979797, transparent 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-	.sectionY {
-		@apply py-15 md:py-18 lg:py-25;
-	}
+  .sectionY {
+    @apply py-15 md:py-18 lg:py-25;
+  }
 
-	.headerY {
-		@apply pt-4 pb-15;
-	}
+  .headerY {
+    @apply pb-15 pt-4;
+  }
 
-	.section-inner-x {
-		@apply px-6 md:px-14 lg:px-21;
-	}
+  .section-inner-x {
+    @apply px-6 md:px-14 lg:px-21;
+  }
 
-	.link {
-		@apply relative md:px-[1px] py-1;
-	}
+  .link {
+    @apply relative py-1 md:px-[1px];
+  }
 
-	.link::after {
-		content: '';
-		transform: scaleX(0);
-		transform-origin: right;
-		transition: transform 0.3s;
+  .link::after {
+    content: "";
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
 
-		@apply absolute bg-DarkCyan left-0 bottom-0  h-[2px] w-full;
-	}
+    @apply absolute bottom-0 left-0 h-[2px]  w-full bg-DarkCyan;
+  }
 
-	.link:hover::after {
-		transform: scaleX(1);
-		transform-origin: left;
-	}
+  .link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 
-	.active::after {
-		transform: scaleX(1);
-	}
+  .active::after {
+    transform: scaleX(1);
+  }
 
-	.active {
-		@apply text-DarkGreyBlue;
-	}
+  .active {
+    @apply text-DarkGreyBlue;
+  }
 
-	.wrapper {
-		@apply my-0 mx-auto max-w-7xl w-full;
-	}
+  .wrapper {
+    @apply mx-auto my-0 w-full max-w-7xl;
+  }
 }
 
 @layer base {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply font-fraunces;
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-fraunces;
+  }
 
-	html {
-		scroll-behavior: smooth;
-		-webkit-scroll-behavior: smooth;
-	}
+  html {
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+  }
 
-	body {
-		@apply bg-LightCream;
-	}
+  body {
+    @apply bg-LightCream;
+  }
 }
