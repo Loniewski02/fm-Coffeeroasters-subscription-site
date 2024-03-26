@@ -2,19 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .sectionX {
-    @apply px-6 md:px-10;
-  }
-
+@layer utilities {
   .magic {
     background-color: #fefcf7cd;
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .no-magic {
     background-color: transparent;
     backdrop-filter: none;
+  }
+}
+
+@layer components {
+  .sectionX {
+    @apply px-6 md:px-10;
   }
 
   .text-gradient {

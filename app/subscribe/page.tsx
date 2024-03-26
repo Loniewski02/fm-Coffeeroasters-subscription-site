@@ -1,4 +1,5 @@
 import Header from "../components/layout/Header";
+import HowItWorks from "./components/HowItWorks";
 
 const Subscribe = () => {
   return (
@@ -9,6 +10,7 @@ const Subscribe = () => {
         desc="Build a subscription plan that best fits your needs. We offer an assortment of the best artisan coffees from around the globe delivered fresh to your door."
         bgClass="bg-[url('../public/assets/plan/mobile/image-hero-blackcup.jpg')] md:bg-[url('../public/assets/plan/tablet/image-hero-blackcup.jpg')] lg:bg-[url('../public/assets/plan/desktop/image-hero-blackcup.jpg')]"
       />
+      <HowItWorks />
     </main>
   );
 };

@@ -19,7 +19,7 @@ const Header: React.FC<Props> = ({ title, desc, children, font, bgClass }) => {
             font === "big"
               ? "text-4xl md:text-5xl lg:text-7xl"
               : "text-xxl md:text-[32px]"
-          } mb-6 text-center text-LightCream md:text-left lg:mb-8 lg:max-w-lg`}
+          } mb-6 max-w-[350px] text-center text-LightCream md:max-w-lg md:text-left lg:mb-8`}
         >
           {title}
         </h1>

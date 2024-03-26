@@ -4,13 +4,13 @@ import { useRouter } from "next/navigation";
 import Benefits from "./home/components/Benefits";
 import Collection from "./home/components/Colection";
 import Header from "./components/layout/Header";
-import SectionHow from "./home/components/SectionHow";
+import SectionHow from "./home/components/HowItWorks";
 import Button from "./components/UI/Button";
 
 export default function Home() {
   const router = useRouter();
 
-  const nawigateHanler = () => {
+  const nawigateSubscribePage = () => {
     router.push("/subscribe");
   };
 
@@ -25,7 +25,7 @@ export default function Home() {
         <Button
           type="button"
           className="mt-10 lg:mt-14"
-          onClick={nawigateHanler}
+          onClick={nawigateSubscribePage}
         >
           Create your plan
         </Button>

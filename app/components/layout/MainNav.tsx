@@ -1,16 +1,59 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 import Wrapper from "./Wrapper";
-import Logo from "../../../public/assets/shared/logo.svg";
+import BurgerBtn from "../UI/BurgerBtn";
 
+import Logo from "../../../public/assets/shared/logo.svg";
 import { ROUTES } from "../../routes";
 
 const MainNav = () => {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
+  const [isNavShown, setIsNavShown] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (!isMobileMenuShown) {
+      const navbarBehavior = () => {
+        window.scrollY > lastScrollY
+          ? setIsNavShown(false)
+          : setIsNavShown(true);
+        setLastScrollY(window.scrollY);
+      };
+
+      window.addEventListener("scroll", navbarBehavior);
+
+      return () => {
+        window.removeEventListener("scroll", navbarBehavior);
+      };
+    }
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        document.body.style.overflow = "visible";
+        setIsMobileMenuShown(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMobileMenuShown]);
+
+  useEffect(() => {
+    isMobileMenuShown
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
+  }, [isMobileMenuShown]);
 
   const showMobileMenuHandler = () => {
     setIsMobileMenuShown((prevState) => !prevState);
@@ -20,32 +63,24 @@ const MainNav = () => {
     setIsMobileMenuShown(false);
   };
 
-  const barClasses =
-    "block w-full h-[3px] bg-DarkGreyBlue rounded-sm absolute left-0";
-
   return (
-    <nav className="sectionX sticky left-0 right-0 top-0 z-20 bg-LightCream py-8 md:py-10">
+    <nav
+      className={`${isNavShown ? "animate-show" : "animate-hide"} ${
+        lastScrollY > 200 && "shadow-sm"
+      } sectionX sticky left-0 right-0 top-0 z-20 bg-[#fefcf7] py-8 md:py-10`}
+    >
       <Wrapper className="flex flex-row items-center justify-between ">
         <Link href="/" aria-label="Home Page">
           <Logo className="h-[18px] w-[163px] md:h-[26px] md:w-[236px]" />
         </Link>
-        <button
-          aria-label="menu button "
+        <BurgerBtn
+          isShown={isMobileMenuShown}
           onClick={showMobileMenuHandler}
-          className="h-[22px] w-6 p-1 md:hidden"
-        >
-          <span className="relative block h-full">
-            <span className={`${barClasses} top-0`} />
-            <span
-              className={`${barClasses} top-1/2 -translate-y-1/2 transform`}
-            />
-            <span className={`${barClasses} bottom-0`} />
-          </span>
-        </button>
+        />
         <div
           className={`${
-            isMobileMenuShown ? "block" : "hidden"
-          } fixed left-0 top-[86px] h-full w-full bg-gradient-to-b from-LightCream from-40% to-transparent p-10 md:static md:block md:h-auto md:w-auto md:bg-transparent md:p-0`}
+            isMobileMenuShown ? "animate-showNavItems" : "animate-hideNavItems"
+          } magic md:no-magic fixed bottom-0 right-0 top-[95px] w-full pt-10 md:static md:block md:h-auto md:w-auto md:p-0`}
         >
           <div className="flex flex-col items-center gap-8 md:flex-row ">
             {ROUTES.map((route) => (

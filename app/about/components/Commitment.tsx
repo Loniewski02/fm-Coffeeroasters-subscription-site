@@ -10,7 +10,7 @@ const Commitment = () => {
         <img
           src={mobileBg.src}
           alt=""
-          className="mb-12 block h-full max-w-[350px] rounded-lg md:hidden"
+          className="mb-12 block h-full w-full max-w-[350px] rounded-lg md:hidden"
         />
         <img
           src={tabletBg.src}
