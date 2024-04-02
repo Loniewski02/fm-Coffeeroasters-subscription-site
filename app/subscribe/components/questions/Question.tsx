@@ -1,20 +1,21 @@
 "use client";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import Arrow from "@/public/assets/plan/general/icon-arrow.svg";
+import QuestionItem from "./QuestionItem";
 
 type Props = {
   question: string;
   id: string;
   answers: { title: string; text: string }[];
+  onUserData: (id: string, text: string) => void;
 };
 
-const Question: React.FC<Props> = ({ question, id, answers }) => {
+const Question: React.FC<Props> = ({ question, id, answers, onUserData }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleAccordeonHandler = () => {
     setIsExpanded((prevState) => !prevState);
-    console.log(isExpanded);
   };
 
   return (
@@ -32,25 +33,7 @@ const Question: React.FC<Props> = ({ question, id, answers }) => {
       </button>
       <AnimatePresence>
         {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="flex h-0 flex-col gap-4 overflow-hidden md:flex-row"
-          >
-            {answers.map((answer) => (
-              <div className="mb-28 md:mb-25">
-                <button
-                  className={`flex flex-col rounded-lg bg-[#F4F1EB] p-6 text-left text-DarkGreyBlue transition-colors hover:bg-PaleOrange md:min-h-[250px]  md:py-8`}
-                >
-                  <span className="mb-1 block font-fraunces text-2xl md:mb-6">
-                    {answer.title}
-                  </span>
-                  <span className="block md:min-w-[160px]">{answer.text}</span>
-                </button>
-              </div>
-            ))}
-          </motion.div>
+          <QuestionItem answers={answers} id={id} onUserChoice={onUserData} />
         )}
       </AnimatePresence>
     </div>
