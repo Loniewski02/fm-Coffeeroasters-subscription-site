@@ -9,7 +9,7 @@ const Benefits = () => {
   return (
     <section className="sectionX sectionY">
       <Wrapper className="section-inner-x relative  flex flex-col items-center pt-16 text-center md:pt-14 lg:pt-25 ">
-        <div className="absolute left-0 top-0 z-0 h-[902px] w-full rounded-[10px] bg-DarkGreyBlue md:h-[523px]" />
+        <div className="gradient absolute left-0 top-0 z-0 h-[902px] w-full rounded-[10px] md:h-[523px]" />
         <h2 className="relative z-10 mb-6 text-center text-xxl text-LightCream md:text-[32px] lg:mb-8 lg:text-[40px]">
           Why choose us?
         </h2>

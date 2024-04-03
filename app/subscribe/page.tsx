@@ -1,8 +1,20 @@
+"use client";
+import { useState } from "react";
 import Header from "../components/layout/Header";
 import HowItWorks from "./components/HowItWorks";
+import Modal from "./components/Modal";
 import Questions from "./components/questions/Questions";
 
 const Subscribe = () => {
+  const [isModalShown, setIsModalShown] = useState(false);
+  const closeModalHandler = () => {
+    setIsModalShown(false);
+  };
+
+  const showModalHandler = () => {
+    setIsModalShown(true);
+  };
+
   return (
     <main>
       <Header
@@ -12,7 +24,8 @@ const Subscribe = () => {
         bgClass="bg-[url('../public/assets/plan/mobile/image-hero-blackcup.jpg')] md:bg-[url('../public/assets/plan/tablet/image-hero-blackcup.jpg')] lg:bg-[url('../public/assets/plan/desktop/image-hero-blackcup.jpg')]"
       />
       <HowItWorks />
-      <Questions />
+      <Questions onShow={showModalHandler} />
+      {isModalShown && <Modal onClose={closeModalHandler} />}
     </main>
   );
 };

@@ -6,7 +6,7 @@ import Wrapper from "@/app/components/layout/Wrapper";
 const Quality = () => {
   return (
     <section className="sectionX sectionY pt-[140px] md:pt-[232px] xl:pt-[188px]">
-      <Wrapper className="section-inner-x flex flex-col items-center rounded-[10px] bg-DarkGreyBlue pb-16 xl:flex-row xl:justify-between xl:gap-6">
+      <Wrapper className="section-inner-x gradient flex flex-col items-center rounded-[10px] pb-16 xl:flex-row xl:justify-between xl:gap-6">
         <img
           src={mobileImg.src}
           alt=""

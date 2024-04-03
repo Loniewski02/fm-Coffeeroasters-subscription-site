@@ -42,7 +42,7 @@ const Footer = () => {
 
   return (
     <footer className="sectionX sectionY pb-18">
-      <Wrapper className="section-inner-x flex flex-col items-center justify-center gap-12 bg-DarkGreyBlue py-13 md:gap-8 lg:relative lg:flex-row lg:justify-start lg:gap-25 lg:py-11">
+      <Wrapper className="section-inner-x gradient flex flex-col items-center justify-center gap-12 py-13 md:gap-8 lg:relative lg:flex-row lg:justify-start lg:gap-25 lg:py-11">
         <Link href="/" aria-label="Home Page" className=" text-white">
           <Logo className="h-6 w-[217px] md:h-[26px] md:w-[236px]" />
         </Link>
