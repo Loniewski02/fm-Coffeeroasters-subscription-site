@@ -10,6 +10,7 @@ const initialState = {
   },
   disabled: "",
   navigatedItem: "",
+  price: 0,
   isModalShown: false,
 };
 
@@ -26,11 +27,20 @@ const subscriptionSlice = createSlice({
         | "deliveries" = action.payload.field;
       state.userData[field] = action.payload.value;
 
-      if (state.userData.preferences === "Capsule") {
+      if (state.userData.preferences === "capsule") {
         state.userData["grind-option"] = "none";
         state.disabled = "grind-option";
       } else {
         state.disabled = "";
+      }
+    },
+    checkPrice(state) {
+      if (state.userData.deliveries === "Every week") {
+        state.price = 14;
+      } else if (state.userData.deliveries === "Every 2 weeks") {
+        state.price = 17.25;
+      } else if (state.userData.deliveries === "Every month") {
+        state.price = 22.5;
       }
     },
     showModal(state) {

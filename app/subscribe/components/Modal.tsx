@@ -1,18 +1,20 @@
 "use client";
-import { useAppDispatch } from "@/app/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { subscriptionActions } from "@/app/store/subscription-slice";
 
 import Button from "@/app/components/UI/Button";
+import SummaryText from "./SummaryText";
 
 const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
+  const price = useAppSelector((state) => state.subscription.price);
 
   const closeModalHandler = () => {
     dispatch(subscriptionActions.hideModal());
   };
 
   const dataFetchHandler = () => {
-    console.log(`fetching data: `);
+    console.log(`fetching user data`);
     closeModalHandler();
   };
 
@@ -25,10 +27,7 @@ const Modal: React.FC = () => {
           </h2>
         </div>
         <div className="rounded-b-lg bg-LightCream p-6 pt-10 md:p-14">
-          <p className="font-fraunces text-2xl leading-[40px] text-Grey">
-            “I drink my coffee as Filter, with a Decaf type of bean. 250g ground
-            ala Cafetiére, sent to me Every Week.”
-          </p>
+          <SummaryText className="mb-2 font-fraunces text-2xl leading-[40px] text-Grey" />
           <p className="mb-6 text-lm text-DarkGreyBlue md:mb-12 lg:text-base">
             Is this correct? You can proceed to checkout or go back to plan
             selection if something is off. Subscription discount codes can also
@@ -36,7 +35,7 @@ const Modal: React.FC = () => {
           </p>
           <div className="md:flex md:items-center md:justify-between md:gap-4">
             <span className="hidden font-fraunces text-[32px] text-DarkGreyBlue md:block md:w-full">
-              $14.00 / mo
+              ${price.toFixed(2)} / mo
             </span>
             <Button
               className="md:w-full md:max-w-[210px]"
