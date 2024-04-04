@@ -1,52 +1,19 @@
 "use client";
-import Wrapper from "@/app/components/layout/Wrapper";
-import { QUESTIONS } from "@/app/constatnt";
-import Question from "./Question";
-import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
+import { subscriptionActions } from "@/app/store/subscription-slice";
+import { QUESTIONS } from "@/app/constatnt";
+
+import Wrapper from "@/app/components/layout/Wrapper";
+import Question from "./Question";
 import Summary from "./Summary";
 
-type Props = {
-  onShow: () => void;
-};
 
-const Questions: React.FC<Props> = ({ onShow }) => {
-  const [userData, setUserData] = useState<UserData>({
-    preferences: "",
-    "bean-type": "",
-    quantity: "",
-    "grind-option": "",
-    deliveries: "",
-  });
-  const [disabled, setDisabled] = useState("");
-  const [navigated, setNavigated] = useState("");
+const Questions: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const disabled = useAppSelector((state) => state.subscription.disabled);
+  const userData = useAppSelector((state) => state.subscription.userData);
   const router = useRouter();
-
-  useEffect(() => {
-    if (userData.preferences === "Capsule") {
-      setDisabled("grind-option");
-    } else {
-      setDisabled("");
-    }
-  }, [userData]);
-
-  useEffect(() => {
-    if (userData.preferences === "Capsule") {
-      setUserData((prevData) => {
-        return { ...prevData, "grind-option": "none" };
-      });
-    } else {
-      setUserData((prevData) => {
-        return { ...prevData, "grind-option": "" };
-      });
-    }
-  }, [disabled]);
-
-  const userDataHandler = (id: string, text: string) => {
-    setUserData((prevData) => {
-      return { ...prevData, [id]: text };
-    });
-  };
 
   const isUserDataNotEmpty = (key: string) => {
     return (
@@ -57,7 +24,7 @@ const Questions: React.FC<Props> = ({ onShow }) => {
   };
 
   const navigateHandler = (id: string) => {
-    setNavigated(id);
+    dispatch(subscriptionActions.setNavigatedItemitem(id));
     router.push(`#${id}`);
   };
 
@@ -87,16 +54,13 @@ const Questions: React.FC<Props> = ({ onShow }) => {
         <div className="flex w-full flex-col items-center">
           {QUESTIONS.map((question) => (
             <Question
-              disabled={disabled}
               key={question.id}
               id={question.id}
               question={question.question}
               answers={question.answers}
-              onUserData={userDataHandler}
-              navigated={navigated}
             />
           ))}
-          <Summary userData={userData} onShowModal={onShow} />
+          <Summary />
         </div>
       </Wrapper>
     </section>

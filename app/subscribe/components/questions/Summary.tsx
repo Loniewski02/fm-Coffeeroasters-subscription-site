@@ -1,3 +1,6 @@
+import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
+import { subscriptionActions } from "@/app/store/subscription-slice";
+
 import Button from "@/app/components/UI/Button";
 
 type SpanProps = {
@@ -11,14 +14,16 @@ const Span: React.FC<SpanProps> = ({ text }) => {
   return <span className="text-DarkCyan">{checkData(text)}</span>;
 };
 
-type SummaryProps = {
-  userData: UserData;
-  onShowModal: () => void;
-};
+const Summary: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const userData = useAppSelector((state) => state.subscription.userData);
 
-const Summary: React.FC<SummaryProps> = ({ userData, onShowModal }) => {
   const anyValueEmpty = (obj: UserData) => {
     return Object.values(obj).some((value) => value === "");
+  };
+
+  const showModalHandler = () => {
+    dispatch(subscriptionActions.showModal());
   };
 
   let preferences = userData.preferences;
@@ -36,7 +41,7 @@ const Summary: React.FC<SummaryProps> = ({ userData, onShowModal }) => {
         {grindOption !== "none" ? (
           <p className="font-fraunces text-2xl leading-[40px] tracking-wide text-LightCream">
             “I drink my coffee as <Span text={preferences} />, with a
-            <Span text={beanType} /> type of bean. <Span text={quantity} />
+            <Span text={beanType} /> type of bean. <Span text={quantity} />,
             ground ala <Span text={grindOption} />, sent to me
             <Span text={deliveries} />
             .”
@@ -54,7 +59,7 @@ const Summary: React.FC<SummaryProps> = ({ userData, onShowModal }) => {
         className="self-center lg:self-end"
         type="button"
         ariaLabel="Create Plan"
-        onClick={onShowModal}
+        onClick={showModalHandler}
         disabled={anyValueEmpty(userData)}
       >
         Create My Plan!

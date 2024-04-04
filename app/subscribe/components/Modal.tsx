@@ -1,15 +1,19 @@
 "use client";
+import { useAppDispatch } from "@/app/hooks/hooks";
+import { subscriptionActions } from "@/app/store/subscription-slice";
+
 import Button from "@/app/components/UI/Button";
-import Wrapper from "@/app/components/layout/Wrapper";
 
-type Props = {
-  onClose: () => void;
-};
+const Modal: React.FC = () => {
+  const dispatch = useAppDispatch();
 
-const Modal: React.FC<Props> = ({ onClose }) => {
+  const closeModalHandler = () => {
+    dispatch(subscriptionActions.hideModal());
+  };
+
   const dataFetchHandler = () => {
     console.log(`fetching data: `);
-    onClose();
+    closeModalHandler();
   };
 
   return (
@@ -28,7 +32,7 @@ const Modal: React.FC<Props> = ({ onClose }) => {
           <p className="mb-6 text-lm text-DarkGreyBlue md:mb-12 lg:text-base">
             Is this correct? You can proceed to checkout or go back to plan
             selection if something is off. Subscription discount codes can also
-            be redeemed at the checkout.{" "}
+            be redeemed at the checkout.
           </p>
           <div className="md:flex md:items-center md:justify-between md:gap-4">
             <span className="hidden font-fraunces text-[32px] text-DarkGreyBlue md:block md:w-full">
@@ -45,7 +49,7 @@ const Modal: React.FC<Props> = ({ onClose }) => {
         </div>
       </section>
       <div
-        onClick={onClose}
+        onClick={closeModalHandler}
         className="fixed bottom-0 left-0 right-0 top-0 z-40 bg-[#0000007b] backdrop-blur-md"
       />
     </>

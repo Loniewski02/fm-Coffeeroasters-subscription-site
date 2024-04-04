@@ -1,34 +1,30 @@
 "use client";
 import { useState, useEffect } from "react";
-import Arrow from "@/public/assets/plan/general/icon-arrow.svg";
+import { useAppSelector } from "@/app/hooks/hooks";
+
 import QuestionItem from "./QuestionItem";
+import Arrow from "@/public/assets/plan/general/icon-arrow.svg";
 
 type Props = {
   question: string;
-  disabled: string;
   id: string;
-  navigated: string;
   answers: { title: string; text: string }[];
-  onUserData: (id: string, text: string) => void;
 };
 
-const Question: React.FC<Props> = ({
-  disabled,
-  question,
-  id,
-  answers,
-  onUserData,
-  navigated,
-}) => {
+const Question: React.FC<Props> = ({ question, id, answers }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const navigatedItem = useAppSelector(
+    (state) => state.subscription.navigatedItem,
+  );
+  const disabled = useAppSelector((state) => state.subscription.disabled);
 
   useEffect(() => {
     disabled === id && setIsExpanded(false);
   }, [disabled]);
 
   useEffect(() => {
-    navigated === id && setIsExpanded(true);
-  }, [navigated]);
+    navigatedItem === id && setIsExpanded(true);
+  }, [navigatedItem]);
 
   const toggleAccordeonHandler = () => {
     setIsExpanded((prevState) => !prevState);
@@ -51,12 +47,7 @@ const Question: React.FC<Props> = ({
           className={`${isExpanded && "rotate-180"} transition-transform`}
         />
       </button>
-      <QuestionItem
-        answers={answers}
-        isExpanded={isExpanded}
-        id={id}
-        onUserChoice={onUserData}
-      />
+      <QuestionItem answers={answers} isExpanded={isExpanded} id={id} />
     </div>
   );
 };

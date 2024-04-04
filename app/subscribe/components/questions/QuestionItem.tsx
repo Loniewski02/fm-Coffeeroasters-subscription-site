@@ -1,24 +1,22 @@
+import { useAppDispatch } from "@/app/hooks/hooks";
+import { subscriptionActions } from "@/app/store/subscription-slice";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 type Props = {
   answers: { title: string; text: string }[];
-  onUserChoice: (id: string, name: string) => void;
   id: string;
   isExpanded: boolean;
 };
 
-const QuestionItem: React.FC<Props> = ({
-  answers,
-  isExpanded,
-  id,
-  onUserChoice,
-}) => {
+const QuestionItem: React.FC<Props> = ({ answers, isExpanded, id }) => {
+  const dispatch = useAppDispatch();
+
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const userChoiceHandler = (index: number, id: string, name: string) => {
     setActiveIndex(index);
-    onUserChoice(id, name);
+    dispatch(subscriptionActions.changeData({ field: id, value: name }));
   };
 
   return (

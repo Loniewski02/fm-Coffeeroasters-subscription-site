@@ -1,6 +1,7 @@
+import { HOW_IT_WORKS } from "@/app/constatnt";
+
 import Line from "@/app/components/layout/Line";
 import Wrapper from "@/app/components/layout/Wrapper";
-import { HOW_IT_WORKS } from "@/app/constatnt";
 import HowItem from "@/app/home/components/HowItem";
 
 const HowItWorks = () => {

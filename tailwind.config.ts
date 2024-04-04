@@ -40,6 +40,11 @@ const config: Config = {
           "90%": { width: "15%" },
           "100%": { left: "100%" },
         },
+        gradient: {
+          "0%": { backgroundPosition: " 0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: " 0% 50%" },
+        },
         hide: {
           "0%": { top: "0" },
           "100%": { top: "-107px" },
@@ -63,6 +68,7 @@ const config: Config = {
         show: "show .3s ease-in-out forwards",
         hideNavItems: "hideNavItems .3s ease-in-out forwards",
         showNavItems: "showNavItems .3s ease-in-out forwards",
+        gradient: "gradient 5s ease infinite;",
       },
     },
   },
