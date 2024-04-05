@@ -16,7 +16,7 @@ const Subscribe = () => {
   useEffect(() => {
     isModalShown
       ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "bvisible");
+      : (document.body.style.overflow = "visible");
   }, [isModalShown]);
 
   return (
