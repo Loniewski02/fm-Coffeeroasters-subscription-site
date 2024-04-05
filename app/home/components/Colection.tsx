@@ -1,9 +1,10 @@
 import Wrapper from "../../components/layout/Wrapper";
+import CoollectionItem from "./CollectionItem";
+
 import espressoPng from "../../../public/assets/home/general/image-gran-espresso.png";
 import planaltoPng from "../../../public/assets/home/general/image-planalto.png";
 import piccolloPng from "../../../public/assets/home/general/image-piccollo.png";
 import danchePng from "../../../public/assets/home/general/image-danche.png";
-import CoollectionItem from "./CollectionItem";
 
 const COLLECTION_DATA = [
   {

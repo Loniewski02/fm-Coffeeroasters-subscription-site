@@ -1,8 +1,6 @@
-import { ReactNode } from "react";
-
 type Props = {
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
 const Wrapper: React.FC<Props> = ({ className, children }) => {

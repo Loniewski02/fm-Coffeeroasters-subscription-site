@@ -1,9 +1,9 @@
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { subscriptionActions } from "@/app/store/subscription-slice";
 
 import Button from "@/app/components/UI/Button";
 import SummaryText from "../SummaryText";
-import { useEffect } from "react";
 
 const Summary: React.FC = () => {
   const dispatch = useAppDispatch();

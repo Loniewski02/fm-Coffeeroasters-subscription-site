@@ -1,4 +1,5 @@
 import Wrapper from "@/app/components/layout/Wrapper";
+
 import mobileBg from "@/public/assets/about/mobile/image-commitment.jpg";
 import tabletBg from "@/public/assets/about/tablet/image-commitment.jpg";
 import desktopBg from "@/public/assets/about/desktop/image-commitment.jpg";

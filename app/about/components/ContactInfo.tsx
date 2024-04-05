@@ -1,8 +1,9 @@
 import Wrapper from "@/app/components/layout/Wrapper";
+import ContactInfoItem from "./ContactInfoItem";
+
 import Canada from "@/public/assets/about/general/illustration-canada.svg";
 import Uk from "@/public/assets/about/general/illustration-uk.svg";
 import Australia from "@/public/assets/about/general/illustration-australia.svg";
-import ContactInfoItem from "./ContactInfoItem";
 
 const DUMMY_DATA = [
   {

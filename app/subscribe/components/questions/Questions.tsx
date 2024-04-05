@@ -2,12 +2,12 @@
 import { useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { subscriptionActions } from "@/app/store/subscription-slice";
+import { isUserDataNotEmpty } from "@/app/helpers";
 import { QUESTIONS } from "@/app/constatnt";
 
 import Wrapper from "@/app/components/layout/Wrapper";
 import Question from "./Question";
 import Summary from "./Summary";
-import { isUserDataNotEmpty } from "@/app/helpers";
 
 const Questions: React.FC = () => {
   const dispatch = useAppDispatch();

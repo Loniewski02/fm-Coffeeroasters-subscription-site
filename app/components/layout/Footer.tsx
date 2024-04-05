@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import Wrapper from "./Wrapper";
-import Logo from "../../../public/assets/shared/logo.svg";
-
+import { usePathname } from "next/navigation";
 import { ROUTES } from "../../routes";
 
+import Wrapper from "./Wrapper";
+
+import Logo from "../../../public/assets/shared/logo.svg";
 import FacebookIco from "../../../public/assets/shared/icon-facebook.svg";
 import TwitterIco from "../../../public/assets/shared/icon-twitter.svg";
 import InstagramIco from "../../../public/assets/shared/icon-instagram.svg";
-import { usePathname } from "next/navigation";
 
 const classes = "transition-color duration-300";
 const SOCIALS: {

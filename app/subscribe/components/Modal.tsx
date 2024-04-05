@@ -1,5 +1,5 @@
 "use client";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { subscriptionActions } from "@/app/store/subscription-slice";
 

@@ -1,7 +1,7 @@
-import { checkDataValue } from "@/app/helpers";
+import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { subscriptionActions } from "@/app/store/subscription-slice";
-import { motion } from "framer-motion";
+import { checkDataValue } from "@/app/helpers";
 
 type Props = {
   answers: { title: string; text: string }[];

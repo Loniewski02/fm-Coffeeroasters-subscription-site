@@ -1,7 +1,8 @@
+import Wrapper from "@/app/components/layout/Wrapper";
+
 import mobileImg from "@/public/assets/about/mobile/image-quality.jpg";
 import tabletImg from "@/public/assets/about/tablet/image-quality.jpg";
 import desktopImg from "@/public/assets/about/desktop/image-quality.jpg";
-import Wrapper from "@/app/components/layout/Wrapper";
 
 const Quality = () => {
   return (

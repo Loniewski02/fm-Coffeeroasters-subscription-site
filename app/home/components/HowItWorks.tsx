@@ -1,10 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { HOW_IT_WORKS } from "@/app/constatnt";
+
 import Button from "../../components/UI/Button";
 import Wrapper from "../../components/layout/Wrapper";
-import HowItem from "./HowItem";
 import Line from "@/app/components/layout/Line";
-import { HOW_IT_WORKS } from "@/app/constatnt";
+import HowItem from "./HowItem";
 
 const HowItWorks = () => {
   const router = useRouter();

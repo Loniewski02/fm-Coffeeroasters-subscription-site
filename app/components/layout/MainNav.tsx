@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-
 import Link from "next/link";
+import { ROUTES } from "../../routes";
+
 import Wrapper from "./Wrapper";
 import BurgerBtn from "../UI/BurgerBtn";
 
 import Logo from "../../../public/assets/shared/logo.svg";
-import { ROUTES } from "../../routes";
 
 const MainNav = () => {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
