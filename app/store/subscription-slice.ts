@@ -27,7 +27,7 @@ const subscriptionSlice = createSlice({
         | "deliveries" = action.payload.field;
       state.userData[field] = action.payload.value;
 
-      if (state.userData.preferences === "capsule") {
+      if (state.userData.preferences === "Capsule") {
         state.userData["grind-option"] = "none";
         state.disabled = "grind-option";
       } else {

@@ -1,4 +1,5 @@
 "use client";
+import { animate, motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/app/hooks/hooks";
 import { subscriptionActions } from "@/app/store/subscription-slice";
 
@@ -20,7 +21,12 @@ const Modal: React.FC = () => {
 
   return (
     <>
-      <section className="fixed left-1/2 top-1/2 z-50 w-full max-w-[572px] -translate-x-1/2 -translate-y-1/2 p-4">
+      <motion.section
+        initial={{ scale: 0, x: "-50%", y: "-50%", opacity: 0 }}
+        animate={{ scale: 1, opacity: 1, transition: { delay: 0.2 } }}
+        exit={{ scale: 0, opacity: 0 }}
+        className="fixed left-1/2 top-1/2 z-50 w-full max-w-[572px] -translate-x-1/2 -translate-y-1/2 p-4"
+      >
         <div className="w-full rounded-t-lg bg-DarkGreyBlue px-6 py-7 md:px-14 md:pb-10 md:pt-12">
           <h2 className="text-xxl text-LightCream md:text-[40px]">
             Order Summary
@@ -46,8 +52,11 @@ const Modal: React.FC = () => {
             </Button>
           </div>
         </div>
-      </section>
-      <div
+      </motion.section>
+      <motion.div
+        initial={{ y: "-100%", opacity: 0 }}
+        animate={{ y: 0, opacity: 1, transition: { type: "tween" } }}
+        exit={{ y: "-100%", opacity: 0, transition: { delay: 0.2 } }}
         onClick={closeModalHandler}
         className="fixed bottom-0 left-0 right-0 top-0 z-40 bg-[#0000007b] backdrop-blur-md"
       />

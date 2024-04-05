@@ -1,4 +1,6 @@
 "use client";
+import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import { useAppSelector } from "../hooks/hooks";
 
 import Header from "../components/layout/Header";
@@ -11,6 +13,12 @@ const Subscribe = () => {
     (state) => state.subscription.isModalShown,
   );
 
+  useEffect(() => {
+    isModalShown
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "bvisible");
+  }, [isModalShown]);
+
   return (
     <main>
       <Header
@@ -21,7 +29,7 @@ const Subscribe = () => {
       />
       <HowItWorks />
       <Questions />
-      {isModalShown && <Modal />}
+      <AnimatePresence>{isModalShown && <Modal />}</AnimatePresence>
     </main>
   );
 };

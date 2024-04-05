@@ -16,7 +16,7 @@ const Button: React.FC<Props> = (props) => {
       disabled={props.disabled}
       className={`${
         props.className && props.className
-      } ${props.disabled && "bg-[#cdcdcd] hover:bg-[#cdcdcd] active:scale-100"} rounded-md bg-DarkCyan px-8 py-4 font-fraunces text-lg text-LightCream transition hover:bg-CyanHover active:scale-105`}
+      } ${props.disabled ? "bg-[#cdcdcd] hover:bg-[#cdcdcd] active:scale-100" : "active:scale-105"} rounded-md bg-DarkCyan px-8 py-4 font-fraunces text-lg text-LightCream transition hover:bg-CyanHover `}
     >
       {props.children}
     </button>

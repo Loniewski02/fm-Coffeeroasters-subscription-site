@@ -81,15 +81,6 @@
 }
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-fraunces;
-  }
-
   html {
     scroll-behavior: smooth;
     -webkit-scroll-behavior: smooth;
@@ -97,5 +88,30 @@
 
   body {
     @apply bg-LightCream;
+  }
+
+  body::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  body::-webkit-scrollbar-track {
+    @apply bg-[#f3f1ed];
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply cursor-pointer rounded-2xl bg-DarkCyan;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    @apply bg-CyanHover;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-fraunces;
   }
 }
