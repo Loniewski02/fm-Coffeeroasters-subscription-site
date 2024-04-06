@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Code](https://github.com/Loniewski02/fm-Coffeeroasters-subscription-site)
+- Solution URL: [Solution](https://www.frontendmentor.io/challenges/coffeeroasters-subscription-site-5Fc26HVY6/hub)
 - Live Site URL: [Live - Vercel](https://fm-coffeeroasters-subscription-site.vercel.app/)
 
 ## My process
