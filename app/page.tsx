@@ -18,7 +18,7 @@ export default function Home() {
     <main>
       <Header
         font="big"
-        bgClass="bg-[url('../public/assets/home/mobile/image-hero-coffeepress.jpg')] md:bg-[url('../public/assets/home/tablet/image-hero-coffeepress.jpg')] lg:bg-[url('../public/assets/home/desktop/image-hero-coffeepress.jpg')]"
+        bgClass="bg-[url('../public/assets/home/mobile/image-hero-coffeepress.jpg')] md:bg-[url('../public/assets/home/tablet/image-hero-coffeepress.jpg')] lg:bg-[url('../public/assets/home/desktop/image-hero-coffeepress.jpg')] lg:min-h-[550px] xl:min-h-[600px]"
         title="Great coffee made simple."
         desc="Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule."
       >
