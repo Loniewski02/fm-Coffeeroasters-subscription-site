@@ -21,7 +21,8 @@ const fontBarlow = Barlow({
 
 export const metadata: Metadata = {
   title: "Coffeeroasters",
-  description: "My App",
+  description:
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam atque tempore optio minus consequuntur similique!",
 };
 
 export default function RootLayout({
