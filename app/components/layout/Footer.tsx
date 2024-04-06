@@ -65,7 +65,7 @@ const Footer = () => {
               key={social.id}
               href={social.url}
               aria-label={social.name}
-              className="text-LightCream hover:text-PaleOrange"
+              className="text-LightCream transition hover:-translate-y-1 hover:text-PaleOrange"
             >
               {social.element}
             </a>

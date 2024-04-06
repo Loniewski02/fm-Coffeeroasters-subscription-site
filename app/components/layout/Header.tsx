@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Wrapper from "./Wrapper";
 
 type Props = {
@@ -10,7 +12,11 @@ type Props = {
 
 const Header: React.FC<Props> = ({ title, desc, children, font, bgClass }) => {
   return (
-    <header className="sectionX headerY">
+    <motion.header
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="sectionX headerY"
+    >
       <Wrapper
         className={`${bgClass} section-inner-x flex min-h-[400px] flex-col items-center justify-center rounded-[10px] bg-cover bg-center bg-no-repeat py-25 md:items-start lg:min-h-[450px] lg:py-20`}
       >
@@ -28,7 +34,7 @@ const Header: React.FC<Props> = ({ title, desc, children, font, bgClass }) => {
         </p>
         {children}
       </Wrapper>
-    </header>
+    </motion.header>
   );
 };
 

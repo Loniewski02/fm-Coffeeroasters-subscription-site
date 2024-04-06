@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 import Wrapper from "@/app/components/layout/Wrapper";
 
 import mobileBg from "@/public/assets/about/mobile/image-commitment.jpg";
@@ -8,22 +11,48 @@ const Commitment = () => {
   return (
     <section className="sectionX sectionY">
       <Wrapper className="xl:section-inner-x flex flex-col items-center md:flex-row md:justify-center md:gap-16 xl:justify-between">
-        <img
+        <motion.img
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{
+            once: true,
+          }}
           src={mobileBg.src}
           alt=""
           className="mb-12 block h-full w-full max-w-[350px] rounded-lg md:hidden"
         />
-        <img
+        <motion.img
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{
+            once: true,
+          }}
           src={tabletBg.src}
           alt=""
           className="hidden h-full rounded-lg md:block lg:hidden"
         />
-        <img
+        <motion.img
+          initial={{ x: -200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{
+            once: true,
+          }}
           src={desktopBg.src}
           alt=""
           className="hidden h-full  rounded-lg lg:block"
         />
-        <div className="text-center text-DarkGreyBlue md:max-w-[340px] md:text-left lg:max-w-[540px] ">
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          whileInView={{
+            scale: 1,
+            opacity: 1,
+            transition: { duration: 0.3, delay: 0.1 },
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-center text-DarkGreyBlue md:max-w-[340px] md:text-left lg:max-w-[540px] "
+        >
           <h2 className="mb-8 text-[32px] lg:text-[40px]">Our commitment</h2>
           <p className="text-lm lg:text-base">
             We’re built on a simple mission and a commitment to doing good along
@@ -38,7 +67,7 @@ const Commitment = () => {
             only the finest blends, we roast each lot to highlight tasting
             profiles distinctive to their native growing region.
           </p>
-        </div>
+        </motion.div>
       </Wrapper>
     </section>
   );
