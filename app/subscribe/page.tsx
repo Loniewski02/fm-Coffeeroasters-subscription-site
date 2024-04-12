@@ -20,7 +20,7 @@ const Subscribe = () => {
   }, [isModalShown]);
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <Header
         font="big"
         title="Create a plan"

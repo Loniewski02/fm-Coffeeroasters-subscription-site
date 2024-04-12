@@ -36,11 +36,12 @@ const ContactInfo = () => {
           Our headquarters
         </h2>
         <div className="flex flex-col items-center gap-6 md:flex-row md:gap-7 lg:gap-12 xl:gap-24">
-          {DUMMY_DATA.map((item) => (
+          {DUMMY_DATA.map((item, index) => (
             <ContactInfoItem
               key={item.country}
               country={item.country}
               data={item.data}
+              index={index}
             >
               {item.icon}
             </ContactInfoItem>

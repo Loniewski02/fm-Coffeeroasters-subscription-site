@@ -5,7 +5,7 @@ import Quality from "./components/Quality";
 
 const About = () => {
   return (
-    <main>
+    <main className="overflow-hidden">
       <Header
         font="small"
         bgClass="bg-[url('../public/assets/about/mobile/image-hero-whitecup.jpg')] md:bg-[url('../public/assets/about/tablet/image-hero-whitecup.jpg')] lg:bg-[url('../public/assets/about/desktop/image-hero-whitecup.jpg')]"

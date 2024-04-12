@@ -16,7 +16,7 @@ const HowItWorks = () => {
 
   return (
     <section className="sectionX sectionY">
-      <Wrapper className="lg:section-inner-x">
+      <Wrapper className="lg:section-inner-x flex flex-col">
         <h2 className="text-Gray mb-20 text-center text-2xl text-Grey md:mb-13 md:text-left lg:mb-24">
           How it works
         </h2>
@@ -35,7 +35,7 @@ const HowItWorks = () => {
         <Button
           type="button"
           onClick={nawigateHanler}
-          className="mt-20 md:mt-11 lg:mt-16"
+          className="mt-20 w-max self-center md:mt-11 md:self-start lg:mt-16"
         >
           Create your plan
         </Button>

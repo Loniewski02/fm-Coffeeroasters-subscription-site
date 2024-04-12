@@ -1,5 +1,5 @@
 "use client";
-import { delay, motion } from "framer-motion";
+import {  motion } from "framer-motion";
 
 import Wrapper from "@/app/components/layout/Wrapper";
 

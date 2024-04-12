@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <Header
         font="big"
         bgClass="bg-[url('../public/assets/home/mobile/image-hero-coffeepress.jpg')] md:bg-[url('../public/assets/home/tablet/image-hero-coffeepress.jpg')] lg:bg-[url('../public/assets/home/desktop/image-hero-coffeepress.jpg')] lg:min-h-[550px] xl:min-h-[600px]"
